@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Parallax } from "react-parallax";
 import { useInView } from "react-intersection-observer";
 import { Calendar, Music } from "lucide-react";
@@ -271,7 +271,7 @@ export default function VintageWeddingPage() {
         <section className="py-16 bg-beige-200">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8 text-center">
-            Esperamos que puedas acompañarnos. ¡Confirmanos tu asistencia!
+              Esperamos que puedas acompañarnos. ¡Confirmanos tu asistencia!
             </h2>
             <div className="flex justify-center">
               <a
