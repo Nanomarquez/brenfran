@@ -3,7 +3,8 @@ import { Parallax } from "react-parallax";
 import { useInView } from "react-intersection-observer";
 import { Calendar, Music } from "lucide-react";
 import Countdown from "./components/Countdown";
-
+import Portada from './assets/portada.jpg'
+import Back from './assets/back.png'
 // Componente de cuenta regresiva
 // const Countdown = ({ targetDate }: { targetDate: Date }) => {
 //   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -79,7 +80,7 @@ export default function VintageWeddingPage() {
         <h1 className="text-4xl font-bold text-center text-burgundy-800">Julia & Martín</h1>
         <p className="text-xl text-center text-gray-600">7 de Diciembre, 2024</p>
       </header> */}
-      <Parallax bgImage="public/portada.jpg" strength={500}>
+      <Parallax bgImage={Portada} strength={500}>
         <div className="h-screen flex items-center justify-center flex-col gap-5 relative">
           <h1 id="portada" className="text-9xl">
             Brenda y Francisco
@@ -189,7 +190,7 @@ export default function VintageWeddingPage() {
           </div>
         </section>
       </AnimatedSection>
-      <Parallax bgImage="public/back.png" strength={300}>
+      <Parallax bgImage={Back} strength={300}>
         <div className="h-[500px]"></div>
       </Parallax>
       <AnimatedSection>
@@ -433,7 +434,7 @@ export default function VintageWeddingPage() {
         </section>
       </AnimatedSection>
       <Parallax
-        bgImage="https://i.blogs.es/0ca9a6/aa/450_1000.webp"
+        bgImage={Back}
         strength={300}
       >
         <div className="h-96"></div>
