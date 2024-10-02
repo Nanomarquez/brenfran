@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css2?family=Whisper&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  font-family: Inter, sans-serif;
+}
+
+#portada {
+  font-family: "Whisper", cursive;
+  font-weight: 400;
+}
+
+body {
+  /* font-family: 'Playfair Display', serif; */
+  scroll-behavior: smooth;
+}
+
+.bg-beige-100 {
+  background-color: #f5f5dc;
+}
+
+.bg-beige-200 {
+  background-color: #e6e6c8;
+}
+
+.text-burgundy-800 {
+  color: #800020;
+}
+
+.bg-burgundy-700 {
+  background-color: #8b0000;
+}
+
+.bg-burgundy-800 {
+  background-color: #800020;
+}
+
+.vintage-border {
+  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75'%3E%3Cg fill='none' stroke='%23800020' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3C/g%3E%3C/svg%3E") 30;
+  border-width: 20px;
+  border-style: solid;
+}
+
+.vintage-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23800020' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
