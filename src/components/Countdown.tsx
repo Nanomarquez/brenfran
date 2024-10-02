@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import CircularProgress from "./CircularProgress";
 
 interface TimeLeft {
@@ -11,9 +11,7 @@ interface TimeLeft {
 }
 
 const Countdown = ({ targetDate }: { targetDate: Date }) => {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
-
-  function calculateTimeLeft(): TimeLeft {
+  const calculateTimeLeft = useCallback((): TimeLeft => {
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {
       Dias: 0,
@@ -32,7 +30,8 @@ const Countdown = ({ targetDate }: { targetDate: Date }) => {
     }
 
     return timeLeft;
-  }
+  }, [targetDate]);
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -40,7 +39,7 @@ const Countdown = ({ targetDate }: { targetDate: Date }) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [calculateTimeLeft, targetDate]);
 
   const getProgressValue = (interval: keyof TimeLeft) => {
     const maxValues = {

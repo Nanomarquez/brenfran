@@ -51,7 +51,7 @@ import Countdown from "./components/Countdown";
 // };
 
 // Componente de sección animada
-const AnimatedSection = ({ children }) => {
+const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
