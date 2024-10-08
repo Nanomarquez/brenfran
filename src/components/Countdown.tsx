@@ -6,8 +6,8 @@ import CircularProgress from "./CircularProgress";
 interface TimeLeft {
   Dias: number;
   Horas: number;
-  Minutos: number;
-  Segundos: number;
+  Min: number;
+  Seg: number;
 }
 
 const Countdown = ({ targetDate }: { targetDate: Date }) => {
@@ -16,16 +16,16 @@ const Countdown = ({ targetDate }: { targetDate: Date }) => {
     let timeLeft = {
       Dias: 0,
       Horas: 0,
-      Minutos: 0,
-      Segundos: 0,
+      Min: 0,
+      Seg: 0,
     };
 
     if (difference > 0) {
       timeLeft = {
         Dias: Math.floor(difference / (1000 * 60 * 60 * 24)),
         Horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        Minutos: Math.floor((difference / 1000 / 60) % 60),
-        Segundos: Math.floor((difference / 1000) % 60),
+        Min: Math.floor((difference / 1000 / 60) % 60),
+        Seg: Math.floor((difference / 1000) % 60),
       };
     }
 
@@ -45,8 +45,8 @@ const Countdown = ({ targetDate }: { targetDate: Date }) => {
     const maxValues = {
       Dias: 30, // Asumiendo un mes máximo
       Horas: 24,
-      Minutos: 60,
-      Segundos: 60,
+      Min: 60,
+      Seg: 60,
     };
     return (
       ((maxValues[interval] - timeLeft[interval]) / maxValues[interval]) * 100
@@ -60,7 +60,6 @@ const Countdown = ({ targetDate }: { targetDate: Date }) => {
           <CircularProgress
             label={timeLeft[interval]}
             value={getProgressValue(interval)}
-            size={200}
             strokeWidth={3}
             interval={interval}
             color={"rgb(159 18 57)"}

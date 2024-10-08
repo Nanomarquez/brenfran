@@ -1,9 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
+import { useDeviceType } from "./useDeviceType";
 
 interface CircularProgressProps {
   value: number; // Value between 0 and 100
-  size?: number;
   strokeWidth: number;
   color?: string;
   label: number;
@@ -12,12 +12,13 @@ interface CircularProgressProps {
 
 export default function CircularProgress({
   value,
-  size = 100,
   strokeWidth,
   color = "#3b82f6",
   label,
   interval,
 }: CircularProgressProps) {
+  const isMobile = useDeviceType();
+  const size = isMobile ? 80 : 200;
   const normalizedValue = Math.min(100, Math.max(0, value));
   const progress = 100 - normalizedValue;
   const radius = (size - strokeWidth) / 2;

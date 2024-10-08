@@ -3,8 +3,8 @@ import { Parallax } from "react-parallax";
 import { useInView } from "react-intersection-observer";
 import { Calendar, Music } from "lucide-react";
 import Countdown from "./components/Countdown";
-import Portada from './assets/portada.jpg'
-import Back from './assets/back.png'
+import Portada from "./assets/portada.jpg";
+import Back from "./assets/back.png";
 // Componente de cuenta regresiva
 // const Countdown = ({ targetDate }: { targetDate: Date }) => {
 //   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -80,12 +80,17 @@ export default function VintageWeddingPage() {
         <h1 className="text-4xl font-bold text-center text-burgundy-800">Julia & Martín</h1>
         <p className="text-xl text-center text-gray-600">7 de Diciembre, 2024</p>
       </header> */}
-      <Parallax bgImage={Portada} strength={500}>
+      <Parallax bgClassName="object-cover" bgImage={Portada} strength={500}>
         <div className="h-screen flex items-center justify-center flex-col gap-5 relative">
-          <h1 id="portada" className="text-9xl">
-            Brenda y Francisco
-          </h1>
-          <h2 className="text-5xl font-extralight text-rose-800 tracking-widest">
+          <div id="portada" className="flex gap-0 md:gap-10 text-9xl flex-col md:flex-row items-center">
+            <p>Brenda</p>
+            <p className="pb-14 md:pb-0">y</p>
+            <p>Franco</p>
+          </div>
+          {/* <h1 id="portada" className="text-center flex-wrap text-9xl">
+            Brenda y Franco
+          </h1> */}
+          <h2 className="text-5xl font-extralight text-center text-rose-800 tracking-widest">
             ¡NOS CASAMOS!
           </h2>
           {/* <div className="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg">
@@ -170,8 +175,8 @@ export default function VintageWeddingPage() {
                 />
               </g>
             </svg>
-            <h1 className="text-6xl font-extralight">LLEGÓ EL GRAN DÍA</h1>
-            <p className="italic text-2xl font-extralight">
+            <h1 className="text-6xl font-extralight text-center">LLEGÓ EL GRAN DÍA</h1>
+            <p className="italic text-2xl font-extralight text-center">
               Andábamos sin buscarnos, pero sabiendo que andábamos para
               encontrarnos.
             </p>
@@ -190,7 +195,7 @@ export default function VintageWeddingPage() {
           </div>
         </section>
       </AnimatedSection>
-      <Parallax bgImage={Back} strength={300}>
+      <Parallax bgClassName="object-cover" bgImage={Back} strength={300}>
         <div className="h-[500px]"></div>
       </Parallax>
       <AnimatedSection>
@@ -220,7 +225,7 @@ export default function VintageWeddingPage() {
         </section>
       </AnimatedSection>
       <AnimatedSection>
-        <div className="flex w-full">
+        <div className="flex w-full flex-col md:flex-row">
           <div className="w-full bg-white flex justify-center items-center flex-col">
             <h1 className="text-[#D28D66] text-4xl mb-5 drop-shadow-md">
               Ceremonia
@@ -229,9 +234,13 @@ export default function VintageWeddingPage() {
             <p className="text-xl drop-shadow-md">20:00 horas</p>
             <p className="text-xl drop-shadow-md">CM Multieventos</p>
             <p className="text-xl drop-shadow-md">Manuel Alberti</p>
-            <button className="bg-[#D28D66] text-white p-4 mt-5 text-xl shadow-lg">
+            <a
+              href="https://maps.app.goo.gl/KjRW2M5NNE6dWXQR7"
+              target="_BLANK"
+              className="bg-[#D28D66] text-white p-4 mt-5 text-xl shadow-lg"
+            >
               Cómo llegar
-            </button>
+            </a>
           </div>
           <div className="w-full bg-white flex justify-center items-center flex-col p-16">
             <h1 className="text-[#D28D66] text-4xl mb-5 drop-shadow-md">
@@ -241,9 +250,13 @@ export default function VintageWeddingPage() {
             <p className="text-xl drop-shadow-md">--:-- horas</p>
             <p className="text-xl drop-shadow-md">Registro Civil Del Pilar</p>
             <p className="text-xl drop-shadow-md">Pilar</p>
-            <button className="bg-[#D28D66] text-white p-4 mt-5 text-xl shadow-lg">
+            <a
+              href="https://maps.app.goo.gl/qPF6yPJ5geVZW2XA8"
+              target="_BLANK"
+              className="bg-[#D28D66] text-white p-4 mt-5 text-xl shadow-lg"
+            >
               Cómo llegar
-            </button>
+            </a>
           </div>
         </div>
       </AnimatedSection>
@@ -276,7 +289,7 @@ export default function VintageWeddingPage() {
             </h2>
             <div className="flex justify-center">
               <a
-                href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20241207T230000Z/20241208T090000Z&text=Boda+Francisco+Y+Brenda"
+                href="https://forms.gle/phaYAYxpLaWDkJKQ8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#D28D66] text-white px-6 py-3 flex items-center hover:bg-burgundy-800 transition duration-300 text-2xl"
@@ -433,10 +446,7 @@ export default function VintageWeddingPage() {
           </div>
         </section>
       </AnimatedSection>
-      <Parallax
-        bgImage={Back}
-        strength={300}
-      >
+      <Parallax bgClassName="object-cover" bgImage={Back} strength={300}>
         <div className="h-96"></div>
       </Parallax>
       <AnimatedSection>
@@ -447,10 +457,10 @@ export default function VintageWeddingPage() {
             </h2>
             <div className="flex justify-center">
               <a
-                href="https://docs.google.com/forms"
+                href="https://forms.gle/YZw1PeGbiYVUWNqw6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 text-white px-6 py-3 rounded-full flex items-center hover:bg-gray-800 transition duration-300"
+                className="bg-[#D28D66] text-white px-6 py-3 text-2xl flex items-center hover:bg-[#a05b32] transition duration-300"
               >
                 <Music className="mr-2" />
                 Sugerir Canción
@@ -459,18 +469,18 @@ export default function VintageWeddingPage() {
           </div>
         </section>
       </AnimatedSection>
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-[#D28D66] text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 Julia & Martín. Todos los derechos reservados.</p>
+          <p>&copy; 2024 Brenda & Franco Todos los derechos reservados.</p>
         </div>
       </footer>
       {/* Reproductor de música de fondo */}
-      <div className="fixed bottom-4 right-4 z-50">
+      {/* <div className="fixed bottom-4 right-4 z-50">
         <audio controls loop className="w-64">
           <source src="/wedding-song.mp3" type="audio/mpeg" />
           Tu navegador no soporta el elemento de audio.
         </audio>
-      </div>
+      </div> */}
     </div>
   );
 }
